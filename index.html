@@ -1,0 +1,90 @@
+<div id="app"></div>
+
+{% load snippetform_tags %}
+<html>
+  <body link="#606060" vlink="#606060">
+    <p>
+      Thank you for applying for a LIM from Porirua City Council. We've sent you
+      a confirmation email with a Reference ID and we will begin processing when
+      your payment has been received.
+    </p>
+    <p>If there are any problems with your application, we will contact you.</p>
+
+    <table
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      style="
+        border-collapse: collapse;
+        font-family: 'Arial';
+        font-size: 10pt;
+        width: 482pt;
+      "
+    >
+      <tbody>
+        {% for key, value in dict.items %}
+        <tr>
+          <td
+            style="
+              border-bottom: solid #c3d254 0.5pt;
+              vertical-align: top;
+              padding: 6pt;
+            "
+          >
+            <strong>{{key}}</strong>
+          </td>
+          <td
+            style="
+              border-bottom: solid #c3d254 0.5pt;
+              vertical-align: top;
+              padding: 6pt;
+            "
+          >
+            {{value|csv_list}}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p>Payment can be made via internet banking:</p>
+
+    <p><strong>PORIRUA CITY COUNCIL BANKING DETAILS ARE:</strong></p>
+    <p>Porirua City Council</br>
+    Westpac Porirua</br>
+    03 0547 0240008 01
+  </p>
+
+    <p>
+      Please ensure you provide the following internet banking information to
+      enable us to receipt the payment correctly:
+    </p>
+    <p>
+      <strong>Particulars</strong>: Property Address of LIM (11 characters, no spaces)</br>
+      <strong>Code</strong>: Reference ID or Property Address of LIM</br>
+      <strong>Reference</strong>: Contact phone number with no spaces
+    </p>
+
+    <p>
+      If you are prompted by your bank to select from a list of Porirua City
+      Council accounts - choose <strong>Consents & Licences</strong>. If you need to cancel a LIM
+      because it is no longer required, please contact us by email
+      <strong>lims@poriruacity.govt.nz</strong> as soon as possible.
+    </p>
+    <p>
+      <img
+        width="114"
+        height="22"
+        src="https://storage.googleapis.com/pcc-html-email-shared-content/porirua-city-email-signature.png"
+        style="height: 0.2291in; width: 1.1875in"
+      />
+    </p>
+
+    <p style="color: #606060">
+      Tel: +64 4 237 5089<br />
+      <a style="color: #606060" href="https://poriruacity.govt.nz/"
+        >poriruacity.govt.nz</a
+      >
+    </p>
+  </body>
+</html>
